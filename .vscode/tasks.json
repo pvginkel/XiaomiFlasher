@@ -1,0 +1,30 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Flash LYWSD03MMC",
+            "type": "shell",
+            "command": "${workspaceFolder}\\flash.cmd",
+            "args": ["${input:port}"],
+            "options": {
+                "shell": { "executable": "cmd.exe", "args": ["/d", "/c"] }
+            },
+            "problemMatcher": [],
+            "group": { "kind": "build", "isDefault": true },
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated",
+                "clear": true
+            }
+        }
+    ],
+    "inputs": [
+        {
+            "id": "port",
+            "type": "promptString",
+            "description": "Serial port of the USB-UART adapter",
+            "default": "COM3"
+        }
+    ]
+}
